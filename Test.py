@@ -3,7 +3,7 @@ from Logic import *
 
 class TestLogic(unittest.TestCase):
     def test_normal_1(self):
-        self.assertEqual(payment_fee_calc_while_studying(), 0)
+        self.assertEqual(payment_fee_calc_while_studying(1, 10000000, 10), 53682,34)
 
 
 if __name__ == '__main__':
