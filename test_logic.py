@@ -1,5 +1,5 @@
 import unittest
-from Logic import payment_fee_calc_while_studying
+from Logic import payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
 
 class TestLogic(unittest.TestCase):
 
