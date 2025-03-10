@@ -32,18 +32,18 @@ def ask_information():
 
 def payment_fee_calc_while_studying(credit_type, college_enrollment, semesters):
     if credit_type == 1:
-        payment_fee =  (0.3 * college_enrollment * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee =  (0.3 * college_enrollment * semesters* 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
     elif credit_type == 2:
-        payment_fee =  (0.6 * college_enrollment * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee =  (0.6 * college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
     else:
-        payment_fee = (college_enrollment * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee = (college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
     return payment_fee
 
 def payment_fee_calc_after_studying(credit_type, college_enrollment, semesters):
     if credit_type == 1:
-        payment_fee =  (0.7 * college_enrollment * 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
+        payment_fee =  (0.7 * college_enrollment * semesters* 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
     elif credit_type == 2:
-        payment_fee =  (0.4 * college_enrollment * 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
+        payment_fee =  (0.4 * college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
     else:
         return None
     return payment_fee
