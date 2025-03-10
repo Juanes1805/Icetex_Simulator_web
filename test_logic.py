@@ -51,6 +51,23 @@ class TestLogic(unittest.TestCase):
         # verificar el resultado
         self.assertAlmostEqual(cuota, expected, places=2)
 
+    def test_normal_1_after_studying(self):
+        # variables de prueba
+        credit_type = 1
+        college_enrollment = 10000000
+        semesters = 10
+
+        # ejecutar la función
+        cuota = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
+
+        # resultado esperado
+        
+        expected = 1252587.96
+
+        # verificar el resultado
+        self.assertAlmostEqual(cuota, expected, places=2)
+
+
   
 
 
