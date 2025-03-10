@@ -1,3 +1,8 @@
+medium_term_credit_interest_rate_30 = 0.0115 #1,15% mes vencido
+medium_term_credit_interest_rate_60 = 0.099 #0,99% mes vencido
+short_term_credit_interest_rate_100 = 0.099 #0,99% mes vencido
+
+
 def ask_information():
     while True:
         credit_type = input("Enter the type of credit you want \n 1 for 30%\n 2 for 60%\n 3 for 100%\n")
@@ -32,18 +37,18 @@ def ask_information():
 
 def payment_fee_calc_while_studying(credit_type, college_enrollment, semesters):
     if credit_type == 1:
-        payment_fee =  (0.3 * college_enrollment * semesters* 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee =  (0.3 * college_enrollment * semesters* medium_term_credit_interest_rate_30) / (1 - (1 + medium_term_credit_interest_rate_30)**(-1 * (semesters/2) * 12))
     elif credit_type == 2:
-        payment_fee =  (0.6 * college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee =  (0.6 * college_enrollment * semesters * medium_term_credit_interest_rate_60) / (1 - (1 + medium_term_credit_interest_rate_60)**(-1 * (semesters/2) * 12))
     else:
-        payment_fee = (college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1 * (semesters/2) * 12))
+        payment_fee = (college_enrollment * semesters * short_term_credit_interest_rate_100) / (1 - (1 + short_term_credit_interest_rate_100)**(-1 * (semesters/2) * 12))
     return payment_fee
 
 def payment_fee_calc_after_studying(credit_type, college_enrollment, semesters):
     if credit_type == 1:
-        payment_fee =  (0.7 * college_enrollment * semesters* 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
+        payment_fee =  (0.7 * college_enrollment * semesters* medium_term_credit_interest_rate_30) / (1 - (1 + medium_term_credit_interest_rate_30)**(-1.5 * (semesters/2) * 12))
     elif credit_type == 2:
-        payment_fee =  (0.4 * college_enrollment * semesters * 0.0115) / (1 - (1 + 0.0115)**(-1.5 * (semesters/2) * 12))
+        payment_fee =  (0.4 * college_enrollment * semesters * medium_term_credit_interest_rate_60) / (1 - (1 + medium_term_credit_interest_rate_60)**(-1.5 * (semesters/2) * 12))
     else:
-        return None
+        raise TypeError("N/A")
     return payment_fee
