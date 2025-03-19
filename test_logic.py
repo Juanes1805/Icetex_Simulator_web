@@ -1,5 +1,5 @@
 import unittest
-from Logic import payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
+from logic import payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
 from exceptions import CollegeEnrollmentError, SemestersError, CreditTypeError
 
 class TestLogic(unittest.TestCase):
