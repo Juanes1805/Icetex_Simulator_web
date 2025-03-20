@@ -1,4 +1,4 @@
-from exceptions import CreditTypeError, CollegeEnrollmentError, SemestersError
+from model.exception import CreditTypeError, CollegeEnrollmentError, SemestersError
 
 
 medium_term_credit_interest_rate_30 = 0.0115 #1,15% mes vencido
