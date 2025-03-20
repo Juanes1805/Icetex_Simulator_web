@@ -1,0 +1,3 @@
+.vscode
+pyproject.toml
+model/__pycache__/
