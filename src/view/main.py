@@ -1,4 +1,4 @@
-from logic import payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
+from model.logic import payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
 def main():
     print("---- Welcome to the ICETEX simulator :p ----")
     while True:
