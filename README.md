@@ -60,6 +60,7 @@ Este programa permite a los estudiantes conocer con claridad su compromiso finan
 
 ## Estructura del Proyecto
 
+```python
 Icetex_Simulator/ 
 ├── src/
 |    ├── model/ 
@@ -83,3 +84,4 @@ Icetex_Simulator/
 ├── .gitignore
 ├── config.py
 └── README.MD
+```
