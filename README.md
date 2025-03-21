@@ -58,6 +58,55 @@ Si un estudiante selecciona el crédito **"Mediano Plazo - 30%"** para una carre
 
 Este programa permite a los estudiantes conocer con claridad su compromiso financiero y planificar sus pagos de manera adecuada.
 
+## Fórmulas Utilizadas
+
+El cálculo de los pagos se basa en la fórmula de cuotas fijas de un crédito con tasa de interés mensual:
+
+$$P = \frac{C \cdot r}{1 - (1 + r)^{-n}}$$
+
+Donde:
+- **P** es el pago mensual.
+- **C** es el capital total financiado (dependiendo del tipo de crédito, puede ser el 30%, 60% o 100% del costo de la carrera).
+- **r** es la tasa de interés mensual:
+  - 1,15% (0,0115) para **Mediano Plazo - 30%**.
+  - 0,99% (0,0099) para **Mediano Plazo - 60%** y **Corto Plazo - 100%**.
+- **n** es el número de meses de pago (durante el estudio o después, según corresponda).
+
+### **Cálculo del Pago Durante el Estudio**
+Para los créditos de **Mediano Plazo - 30%** y **Mediano Plazo - 60%**, el estudiante paga una parte del crédito mientras estudia, calculado con la fórmula:
+
+$$
+P = \frac{(p_c \cdot C) \cdot r}{1 - (1 + r)^{-m}}
+$$
+
+Donde:
+- **p_c** es el porcentaje del costo total cubierto mientras estudia (30% o 60% según el crédito).
+- **m** es el número de meses durante el estudio (**semestres × 6 meses**).
+
+### **Cálculo del Pago Después del Estudio**
+Para los créditos de **Mediano Plazo - 30%** y **Mediano Plazo - 60%**, al finalizar los estudios, el saldo restante se paga en un tiempo equivalente a **1.5 veces la duración de la carrera**:
+
+$$
+P = \frac{(p_f \cdot C) \cdot r}{1 - (1 + r)^{-m_f}}
+$$
+
+Donde:
+- **p_f** es el porcentaje restante del crédito (70% o 40% según el crédito).
+- **m_f** es el número de meses para pagar después del estudio (**1.5 × duración en años × 12 meses**).
+
+### **Corto Plazo - 100%**
+En este tipo de crédito, el estudiante paga el **100% del costo total** durante el periodo de estudio. Se calcula con la misma fórmula:
+
+$$
+P = \frac{C \cdot r}{1 - (1 + r)^{-m}}
+$$
+
+Donde **m** es el número de meses durante la carrera (**semestres × 6 meses**).
+
+---
+Este programa utiliza estas fórmulas para calcular el compromiso financiero de los estudiantes y ayudarlos a planificar sus pagos de manera adecuada.
+
+
 ## Ejecución del Proyecto
 
 Para ejecutar la interfaz en consola, use el siguiente comando:
