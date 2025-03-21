@@ -1,3 +1,7 @@
+import unittest
+import sys
+sys.path.append("src")
+
 from model.exception import CreditTypeError, CollegeEnrollmentError, SemestersError
 
 
