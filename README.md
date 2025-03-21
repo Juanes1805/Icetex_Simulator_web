@@ -81,6 +81,6 @@ Este programa permite a los estudiantes conocer con claridad su compromiso finan
 ├── tests/
      ├── test_logic.py 
 ├── .gitignore
-├── config.py
-└── README.MD
+├── README.MD
+└── config.py
 ```
