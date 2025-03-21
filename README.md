@@ -57,3 +57,29 @@ Si un estudiante selecciona el crédito **"Mediano Plazo - 30%"** para una carre
   *5 años * 1.5 = 7.5 años*
 
 Este programa permite a los estudiantes conocer con claridad su compromiso financiero y planificar sus pagos de manera adecuada.
+
+## Estructura del Proyecto
+
+Icetex_Simulator/ 
+├── src/
+|    ├── model/ 
+|    │   ├── Casos de Prueba.xlsx
+|    │   ├── __init__.py 
+|    │   ├── logic.py 
+|    │   └── exception.py 
+|    ├── view/
+|    │   ├── console
+|    |   |   └─ main.py
+|    │   ├── gui
+|    |   |   └─ kivy.py
+|    │   └── web
+|    |       └─ app.py
+|    └── controller/
+|     │  ├── __init__.py 
+|        ├── urls.py
+|        └── blueprints.py
+├── tests/
+     │   ├── test_logic.py 
+├── .gitignore
+├── config.py
+└── README.MD
