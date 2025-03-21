@@ -1,4 +1,3 @@
 .vscode
 pyproject.toml
-src/model/__pycache__/
-.gitignore
+__pycache__/
