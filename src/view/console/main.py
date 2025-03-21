@@ -1,9 +1,10 @@
 """This module contains the main function of the console application."""
 import sys
+sys.path.append("src")
+
 from model.logic import (
     payment_fee_calc_while_studying, ask_information, payment_fee_calc_after_studying
 )
-sys.path.append("src")
 
 def main():
     """Main function of the console application."""
