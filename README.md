@@ -58,6 +58,22 @@ Si un estudiante selecciona el crédito **"Mediano Plazo - 30%"** para una carre
 
 Este programa permite a los estudiantes conocer con claridad su compromiso financiero y planificar sus pagos de manera adecuada.
 
+## Ejecución del Proyecto
+
+Para ejecutar la interfaz en consola, use el siguiente comando:
+
+```sh
+python src/view/console/main.py
+```
+
+## Ejecución de Pruebas
+
+Para ejecutar las pruebas unitarias, utilice el siguiente comando desde la raíz del proyecto:
+
+```sh
+python -m unittest discover -s tests -p "test_*.py"
+```
+
 ## Estructura del Proyecto
 
 ```python
