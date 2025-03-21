@@ -13,8 +13,8 @@ short_term_credit_interest_rate_100 = 0.099 #0,99% month expired
 def ask_information():
     while True:
         credit_type = input("Enter the type of credit you want \n 1 for 30%\n 2 for 60%\n 3 for 100%\n")
-        
-        if credit_type in ["1", "2", "3"]:
+        list_options = ["1", "2", "3"]
+        if credit_type in list_options:
             credit_type = int(credit_type)  # We convert to integer after validating the input
             break
         print("Invalid option. Please enter 1, 2, or 3.")
