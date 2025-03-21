@@ -13,7 +13,7 @@ def ask_information():
     """Ask the user for the information needed to calculate the payment fee."""
     while True:
         credit_type = input("Enter the type of credit you want \n 1 for 30%\n 2 for 60%\n"
-        "3 for 100%\n")
+        " 3 for 100%\n")
         list_options = ["1", "2", "3"]
         if credit_type in list_options:
             credit_type = int(credit_type)  # We convert to integer after validating the input
@@ -23,7 +23,7 @@ def ask_information():
     while True:
         try:
             college_enrollment = float(input("Enter the amount of college enrollment per"
-            "semester: "))
+            " semester: "))
             if college_enrollment > 0:  # We make ensure it is a positive number
                 break
             else:
