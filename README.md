@@ -61,8 +61,7 @@ Este programa permite a los estudiantes conocer con claridad su compromiso finan
 ## Estructura del Proyecto
 
 ```python
-Icetex_Simulator/ 
-├── src/
+└── src/
 |    ├── model/ 
 |    │   ├── Casos de Prueba.xlsx
 |    │   ├── __init__.py 
@@ -76,11 +75,11 @@ Icetex_Simulator/
 |    │   └── web
 |    |       └─ app.py
 |    └── controller/
-|     │  ├── __init__.py 
+|        ├── __init__.py 
 |        ├── urls.py
 |        └── blueprints.py
 ├── tests/
-     │   ├── test_logic.py 
+     ├── test_logic.py 
 ├── .gitignore
 ├── config.py
 └── README.MD
