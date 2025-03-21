@@ -144,7 +144,7 @@ python -m unittest discover -s tests -p "test_*.py"
 |        ├── urls.py
 |        └── blueprints.py
 ├── tests/
-     ├── test_logic.py 
+|   └── test_logic.py 
 ├── .gitignore
 ├── README.MD
 └── config.py
