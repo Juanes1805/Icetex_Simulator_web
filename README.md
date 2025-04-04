@@ -1,5 +1,14 @@
 # Simulador de Créditos Educativos
 
+## Autores:
+- Juan Sebastián Pinilla
+- Mileidy Vanegas
+- Samuel Gil
+
+## Autores de la interfaz gráfica:
+- Emanuel García
+- Luis Carlos Guerra
+
 ## Descripción
 
 Este programa permite a los estudiantes conocer con claridad su compromiso financiero y planificar sus pagos de manera adecuada. La simulación calcula la cantidad que el estudiante debe pagar mientras estudia y el monto que debe cancelar después de finalizar su periodo de estudios. La información para la realización de este programa fue extraida directamente de la página del [ICETEX](https://web.icetex.gov.co/es/creditos/tu-eliges).
