@@ -19,3 +19,14 @@ class CreditTypeError(Exception):
         self.message = message
 
         super().__init__(self.message)
+
+class NotPressBottonError(Exception):
+    def __init__(self, message="Not press botton of credit type."):
+        self.message = message
+        
+class NotCollegeEnrollmentError(Exception):
+    """Exception raised for errors in the college enrollment amount."""
+    def __init__(self, message="Invalid college enrollment"):
+        self.message = message
+
+        super().__init__(self.message)

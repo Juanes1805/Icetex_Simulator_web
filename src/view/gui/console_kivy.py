@@ -9,11 +9,12 @@ from kivy.uix.button import Button
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.graphics import Color, Rectangle
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.popup import Popup
 
 from model.logic import (
     payment_fee_calc_while_studying, payment_fee_calc_after_studying
 )
-from model.exception import CollegeEnrollmentError, SemestersError, CreditTypeError
+from model.exception import *
 
 class Icetex_Calculator(App):
     def build(self):
@@ -151,7 +152,7 @@ class Icetex_Calculator(App):
         main_container.add_widget(layout_input_quantity)
         main_container.add_widget(container_output)
         main_container.add_widget(centered_container_controller)
-        
+        self.credit_type_choice = 0
         
         return main_container
 
@@ -193,14 +194,39 @@ class Icetex_Calculator(App):
         Args:
             sender (Button): El botón que fue presionado.
         """
-        credit_type = self.credit_type_choice
-        college_enrollment = int(self.cost_semesteer.text)
-        semesters = int(self.quantity_semesteer.text)
+        try: 
+            if not self.credit_type_choice:
+                raise CreditTypeError 
+            credit_type = self.credit_type_choice
+            
+            if not self.cost_semesteer.text:
+                raise CollegeEnrollmentError()
+            college_enrollment = float(self.cost_semesteer.text)
+            if college_enrollment < 0:  # We make ensure it is a positive number
+                raise CollegeEnrollmentError()
+            
+            
+            if not self.quantity_semesteer.text:
+                raise SemestersError()
+            semesters = int(self.quantity_semesteer.text)
+            if semesters < 0:
+                raise SemestersError()
+            
+            fee_while = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
+            fee_after = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
+            self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while, 2)}\nYour monthly fee after studying is: ${round(fee_after, 2)}"
+            
+        except CollegeEnrollmentError as e:
+            print(e)
+        except SemestersError as e:
+            print(e)
+        except CreditTypeError as e:
+            print(e)
+            
+            
         
         # Ejecutar la función de cálculo
-        fee_while = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
-        fee_after = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
-        self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while, 2)}\nYour monthly fee after studying is: ${round(fee_after, 2)}"
+        
     
     def restart(self, sender):
         """
@@ -214,11 +240,15 @@ class Icetex_Calculator(App):
         for button in self.container_buttons.children:
             button.disabled = False
             button.background_color = (0, 0.7, 1, 1)
+            self.credit_type_choice = 0
         
         self.cost_semesteer.text = ""
         self.quantity_semesteer.text = ""
         self.output.text = "Total credit: "
 
+    
+    
+    
 
 if __name__ == "__main__":
     Icetex_Calculator().run()
