@@ -123,6 +123,13 @@ Para ejecutar la interfaz en consola, use el siguiente comando:
 ```sh
 python src/view/console/main.py
 ```
+## Ejecución de Interfaz Gráfica Kivy
+
+Para ejecutar las interfaz gráfica, utilice el siguiente comando desde la raíz del proyecto:
+
+```sh
+python src/view/gui/console_kivy.py
+```
 
 ## Ejecución de Pruebas
 
