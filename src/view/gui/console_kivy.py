@@ -188,7 +188,7 @@ class Icetex_Calculator(App):
         Calcula el total del crédito basado en los datos ingresados.
 
         Usa el tipo de crédito seleccionado, el costo del semestre y el número de semestres
-        para calcular el total del crédito.
+        para calcular el total del crédito mientras esta estudiando y despues de terminar.
 
         Args:
             sender (Button): El botón que fue presionado.
@@ -198,8 +198,9 @@ class Icetex_Calculator(App):
         semesters = int(self.quantity_semesteer.text)
         
         # Ejecutar la función de cálculo
-        fee = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
-        self.output.text = f"Total credit: ${str(round(fee, 2))}"
+        fee_while = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
+        fee_after = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
+        self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while, 2)}\nYour monthly fee after studying is: ${round(fee_after, 2)}"
     
     def restart(self, sender):
         """
