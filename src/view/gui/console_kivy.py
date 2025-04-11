@@ -48,7 +48,7 @@ class Icetex_Calculator(App):
         main_container.bind(pos=update_rect, size=update_rect)
 
         title_welcome = Label(text="Welcome to the ICETEX simulator", color=(0, 0, 0, 1), font_size=30)
-  
+
         container_tittle_welcome = AnchorLayout(anchor_x="center", anchor_y="center")
         container_tittle_welcome.add_widget(title_welcome)
         
@@ -203,12 +203,14 @@ class Icetex_Calculator(App):
                 raise CollegeEnrollmentError()
             college_enrollment = float(self.cost_semesteer.text)
             if college_enrollment < 0:  # We make ensure it is a positive number
-                raise CollegeEnrollmentError()
+                raise CollegeEnrollmentMenorThanZeroError()
             
             
             if not self.quantity_semesteer.text:
                 raise SemestersError()
             semesters = int(self.quantity_semesteer.text)
+            if semesters > 12:
+                raise SemestersError()
             if semesters < 0:
                 raise SemestersError()
             
@@ -216,15 +218,9 @@ class Icetex_Calculator(App):
             fee_after = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
             self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while, 2)}\nYour monthly fee after studying is: ${round(fee_after, 2)}"
             
-        except CollegeEnrollmentError as e:
-            print(e)
-        except SemestersError as e:
-            print(e)
-        except CreditTypeError as e:
-            print(e)
-            
-            
-        
+        except (CollegeEnrollmentError, ValueError, SemestersError, CreditTypeError, CollegeEnrollmentMenorThanZeroError) as e:
+            self.output.text = f"{e}"
+
         # Ejecutar la función de cálculo
         
     

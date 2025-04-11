@@ -6,6 +6,13 @@ class CollegeEnrollmentError(Exception):
 
         super().__init__(self.message)
 
+class CollegeEnrollmentMenorThanZeroError(Exception):
+    """Exception raised for errors in the college enrollment amount."""
+    def __init__(self, message="College enrollment cannot be less than zero."):
+        self.message = message 
+
+        super().__init__(self.message)
+
 class SemestersError(Exception):
     """Exception raised for errors in the number of semesters."""
     def __init__(self, message="Invalid number of semesters"):
