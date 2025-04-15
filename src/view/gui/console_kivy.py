@@ -105,13 +105,15 @@ class Icetex_Calculator(App):
             hint_text="e.g. (12000000)",
             halign="center",
             size_hint=(0.5, 0.5),
-            multiline=False
+            multiline=False,
+            input_filter='float'
         )
         self.quantity_semesteer = TextInput(
             hint_text="e.g. (10)",
             halign="center",
             size_hint=(0.5, 0.5),
-            multiline=False
+            multiline=False,
+            input_filter='int'
         )
 
         layout_input_cost.add_widget(self.cost_semesteer)
@@ -160,7 +162,7 @@ class Icetex_Calculator(App):
         """
         Maneja la selección del tipo de crédito.
 
-        Deshabilita todos los botones excepto el que se pulsó y cambia su color de fondo.
+        Deshabilita todos los botones cuando el usuario selecciona una opción y cambia el color de fondo del boton pulsado.
         También almacena el tipo de crédito seleccionado.
 
         Args:
@@ -214,14 +216,16 @@ class Icetex_Calculator(App):
             if semesters < 0:
                 raise SemestersError()
             
-            fee_while = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
-            fee_after = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
-            self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while, 2)}\nYour monthly fee after studying is: ${round(fee_after, 2)}"
+            fee_while_studying = payment_fee_calc_while_studying(credit_type, college_enrollment, semesters)
+            fee_after_studying = payment_fee_calc_after_studying(credit_type, college_enrollment, semesters)
+            
+            if not fee_after_studying:
+                self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while_studying, 2)}\n"
+            else:
+                self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while_studying, 2)}\nYour monthly fee after studying is: ${round(fee_after_studying, 2)}\n"
             
         except (CollegeEnrollmentError, ValueError, SemestersError, CreditTypeError, CollegeEnrollmentMenorThanZeroError) as e:
             self.output.text = f"{e}"
-
-        # Ejecutar la función de cálculo
         
     
     def restart(self, sender):
@@ -243,8 +247,5 @@ class Icetex_Calculator(App):
         self.output.text = "Total credit: "
 
     
-    
-    
-
 if __name__ == "__main__":
     Icetex_Calculator().run()
