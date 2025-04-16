@@ -196,13 +196,13 @@ class Icetex_Calculator(App):
         Args:
             sender (Button): El botón que fue presionado.
         """
-        try: 
+        try:  
             if not self.credit_type_choice:
-                raise CreditTypeError 
+                raise NotPressBottonError
             credit_type = self.credit_type_choice
             
             if not self.cost_semesteer.text:
-                raise CollegeEnrollmentError()
+                raise CollegeEnrollmentError
             college_enrollment = float(self.cost_semesteer.text)
             if college_enrollment < 0:  # We make ensure it is a positive number
                 raise CollegeEnrollmentMenorThanZeroError()
@@ -224,8 +224,9 @@ class Icetex_Calculator(App):
             else:
                 self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while_studying, 2)}\nYour monthly fee after studying is: ${round(fee_after_studying, 2)}\n"
             
-        except (CollegeEnrollmentError, ValueError, SemestersError, CreditTypeError, CollegeEnrollmentMenorThanZeroError) as e:
-            self.output.text = f"{e}"
+        except (CollegeEnrollmentError, ValueError, SemestersError, CreditTypeError, CollegeEnrollmentMenorThanZeroError, NotPressBottonError) as e:
+            self.mostrar_error(str(e))
+
         
     
     def restart(self, sender):
@@ -245,7 +246,34 @@ class Icetex_Calculator(App):
         self.cost_semesteer.text = ""
         self.quantity_semesteer.text = ""
         self.output.text = "Total credit: "
+    
+    def mostrar_error( self, err ):
+        """ 
+        Abre una ventana emergente, con un texto y un botón para cerrar 
+        Parámetros: 
+        err: Mensaje de error que queremos mostrar en la ventana        
+        """
+        
+        content = BoxLayout(orientation='vertical', padding=50, spacing=10)
+        content.bind(minimum_height=content.setter('height'))
+    
+        # Etiqueta con texto adaptado al tamaño de la pantalla
+        error_label = Label(text=str(err), size_hint=(1,None), halign="center", valign="middle", text_size=(400,None))
+        error_label.bind(texture_size=error_label.setter('size'))
+        content.add_widget( error_label )
 
+        container_button_close = AnchorLayout(anchor_x="center", anchor_y="bottom")
+        close = Button(text="Close", size_hint=(None,None), size=(200,50))
+        container_button_close.add_widget(close)
+        content.add_widget(container_button_close)
+        
+        # Crear el Popup con tamaño reducido
+        popup = Popup(title="Error",content=content, size_hint=(None,None), size=(450,300), auto_dismiss=False)
+        
+        close.bind( on_press=popup.dismiss)
+        
+        popup.open()
+   
     
 if __name__ == "__main__":
     Icetex_Calculator().run()
