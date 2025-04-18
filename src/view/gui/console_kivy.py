@@ -225,7 +225,7 @@ class Icetex_Calculator(App):
                 self.output.text = f"Total credit: \nYour monthly fee while studying is: ${round(fee_while_studying, 2)}\nYour monthly fee after studying is: ${round(fee_after_studying, 2)}\n"
             
         except (CollegeEnrollmentError, ValueError, SemestersError, CreditTypeError, CollegeEnrollmentMenorThanZeroError, NotPressBottonError) as e:
-            self.mostrar_error(str(e))
+            self.show_error(str(e))
 
         
     
@@ -247,7 +247,7 @@ class Icetex_Calculator(App):
         self.quantity_semesteer.text = ""
         self.output.text = "Total credit: "
     
-    def mostrar_error( self, err ):
+    def show_error( self, err ):
         """ 
         Abre una ventana emergente, con un texto y un botón para cerrar 
         Parámetros: 
