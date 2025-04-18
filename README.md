@@ -178,27 +178,29 @@ icetex_simulator_kivy/
 ├── src/
 │   ├── controller/
 │   │   ├── __init__.py
-│   │   └── loan_controller.py
+│   │   
 │   │
 │   ├── model/
 │   │   ├── __init__.py
-│   │   └── loan_model.py
+│   │   ├── Casos de Prueba.xlsx
+│   │   ├── exception.py
+│   │   └── logic.py
 │   │
 │   └── view/
+│       ├── console/
+│       │   └── main.py
 │       ├── gui/
-│       │   ├── __init__.py
 │       │   └── console_kivy.py
-│       └── __init__.py
+│       └── web/
+│           └── app.py
 │
 ├── test/
-│   ├── __init__.py
-│   ├── test_loan_controller.py
-│   └── test_loan_model.py
+│   └── test_logic.py
 │
 ├── .gitignore
-├── LICENSE
-├── README.md
+├── config.py
 ├── launch.py
+├── README.md
 ├── requirements.txt
 └── SimuladorIcetex.spec
 
