@@ -141,7 +141,7 @@ python -m unittest discover -s tests -p "test_*.py"
 
 ## Ejecutable del proyecto
 
-# Pasos para ejecutar SimuladorIcetex.exe
+### Pasos para ejecutar SimuladorIcetex.exe
 
 1. **Ubicación del archivo**
    - Navegar a la carpeta dist dentro del proyecto:
