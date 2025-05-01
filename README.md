@@ -172,8 +172,8 @@ git clone https://github.com/tu-usuario/tu-repositorio.git
 2. **Copia el APK a tu dispositivo Android**:
 
     - **Vía USB**: Conecta tu dispositivo y transfiere el archivo `IcetexSimulato-0.1-arm64-v8a_armeabi-v7a-debug.apk` desde la carpeta `bin/`.
-    - **Manualmente **: Descarga el repositorio como ZIP y copia el archivo `.apk` desde tu computadora.
-    - 
+    - **Manualmente**: Descarga el repositorio como ZIP y copia el archivo `.apk` desde tu computadora.
+      
 3. **Instala el APK**:
     - Abre el archivo `.apk` desde el explorador de archivos de tu dispositivo.
     - Si aparece un mensaje de "Orígenes desconocidos", habilita la instalación de aplicaciones externas en:
