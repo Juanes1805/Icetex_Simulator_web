@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Icetex Simulator</string>
-    <string name="private_version">ef161d4d5b0a64ce2cc7d809dad4451fd9ae41ae</string>
-    <string name="presplash_color">#000000</string>
-    <string name="urlScheme">kivy</string>
-</resources>
