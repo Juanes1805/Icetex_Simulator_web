@@ -165,20 +165,20 @@ python -m unittest discover -s tests -p "test_*.py"
 
 ### Pasos para ejecutar SimuladorIcetex.exe
 
-1. **Descarga el repositorio completo **(si no lo has hecho):
+1. **Descarga el repositorio completo**(si no lo has hecho):
 ```batch
 git clone https://github.com/tu-usuario/tu-repositorio.git
 ```
-2. **Copia el APK a tu dispositivo Android **:
+2. **Copia el APK a tu dispositivo Android**:
 
-    - **Vía USB **: Conecta tu dispositivo y transfiere el archivo `IcetexSimulato-0.1-arm64-v8a_armeabi-v7a-debug.apk` desde la carpeta `bin/`.
+    - **Vía USB**: Conecta tu dispositivo y transfiere el archivo `IcetexSimulato-0.1-arm64-v8a_armeabi-v7a-debug.apk` desde la carpeta `bin/`.
     - **Manualmente **: Descarga el repositorio como ZIP y copia el archivo `.apk` desde tu computadora.
     - 
-3. **Instala el APK **:
+3. **Instala el APK**:
     - Abre el archivo `.apk` desde el explorador de archivos de tu dispositivo.
     - Si aparece un mensaje de "Orígenes desconocidos", habilita la instalación de aplicaciones externas en:
     `Ajustes > Aplicaciones > Orígenes desconocidos (o "Fuentes desconocidas")`
-3. **Ejecuta la aplicación **:
+3. **Ejecuta la aplicación**:
 
     - Una vez instalada, abre la aplicación desde el cajón de aplicaciones de tu dispositivo.
 
