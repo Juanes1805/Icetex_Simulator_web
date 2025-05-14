@@ -44,12 +44,24 @@ class CreditsController:
         """Insert a credit into the database"""
         cursor = self.get_cursor()
         cursor.execute(
-            f"""
-            INSERT INTO credits (credit_id, college_enrollment, semesters, credit_type,
-            payment_fee_while_studying, payment_fee_after_studying) VALUES ('{credit.credit_id}',
-            '{credit.college_enrollment}', '{credit.semesters}', '{credit.credit_type}',
-            '{credit.payment_fee_while_studying}', '{credit.payment_fee_after_studying}')
             """
+            INSERT INTO credits (
+                credit_id,
+                college_enrollment,
+                semesters,
+                credit_type,
+                payment_fee_while_studying,
+                payment_fee_after_studying
+            ) VALUES (%s, %s, %s, %s, %s, %s)
+            """,
+            (
+                credit.credit_id,
+                credit.college_enrollment,
+                credit.semesters,
+                credit.credit_type,
+                credit.payment_fee_while_studying,
+                credit.payment_fee_after_studying,  # Si es None, se inserta como NULL
+            ),
         )
 
         cursor.connection.commit()
