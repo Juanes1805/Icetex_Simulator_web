@@ -195,13 +195,13 @@ icetex_simulator_kivy/
 │   └── SimuladorIcetex.exe
 ├── src
 │   ├── controller
-│   │   ├── blueprints.py
-│   │   ├── urls.py
+│   │   ├── credits_controller.py
 │   │   └── __init__.py
 │   ├── model
 │   │   ├── Casos de Prueba.xlsx
 │   │   ├── exception.py
 │   │   ├── logic.py
+│   │   ├── credit.py
 │   │   └── __init__.py
 │   └── view
 │       ├── console
@@ -210,12 +210,14 @@ icetex_simulator_kivy/
 │       │   └── console_kivy.py
 │       └── web
 │           └── app.py
-└── tests
-|   └── test_logic.py
+├── tests
+│   ├── test_logic.py
+|   └── test_credit.py
 ├── buildozer.spec
 ├── config.py
 ├── main.py
 ├── README.md
 ├── requirements.txt
 ├── SimuladorIcetex.spec
+└── SecretConfig-sample.py
 ```
