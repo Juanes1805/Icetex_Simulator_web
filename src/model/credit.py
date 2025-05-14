@@ -1,5 +1,5 @@
 class Credit:
-    def __init__(self, credit_id: str, college_enrollment: float, semesters: int, credit_type: int, 
+    def __init__(self, credit_id: str, college_enrollment: float, semesters: int, credit_type: str, 
                  payment_fee_while_studying: float, payment_fee_after_studying: float):
         """
         Initialize a Credit object with the given parameters.
