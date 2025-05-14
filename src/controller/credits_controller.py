@@ -40,6 +40,11 @@ class CreditsController:
         cursor.execute(consultation)
         cursor.connection.commit()
 
+    def clear_table(self):
+        cursor = self.get_cursor()
+        cursor.execute("DELETE FROM credits;")
+        cursor.connection.commit()
+
     def insert_credit(self, credit: Credit):
         """Insert a credit into the database"""
         cursor = self.get_cursor()
