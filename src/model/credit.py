@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 class Credit:
     def __init__(self, credit_id: str, college_enrollment: float, semesters: int, credit_type: str, 
                  payment_fee_while_studying: float, payment_fee_after_studying: float):
@@ -9,8 +11,8 @@ class Credit:
         self.college_enrollment = college_enrollment
         self.semesters = semesters
         self.credit_type = credit_type
-        self.payment_fee_while_studying = payment_fee_while_studying
-        self.payment_fee_after_studying = payment_fee_after_studying
+        self.payment_fee_while_studying = Decimal(payment_fee_while_studying)
+        self.payment_fee_after_studying = Decimal(payment_fee_after_studying) if payment_fee_after_studying is not None else None
 
     def isEqual(self, other) -> bool:
         """
