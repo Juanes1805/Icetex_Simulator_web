@@ -1,12 +1,13 @@
+import psycopg2
 import sys
 sys.path.append( "src" )
-
-import psycopg2
 
 from model.credit import Credit
 import SecretConfig
 
 class CreditsController:
+    """Controller for managing credits in the database."""
+
     def get_cursor(self):
         """Connect to the PostgreSQL database"""
         connection = psycopg2.connect(
@@ -16,9 +17,9 @@ class CreditsController:
             password=SecretConfig.PGPASSWORD
         )
 
-        cursor = connection.cursor()  
+        cursor = connection.cursor()
         return cursor
-    
+
     def create_table(self):
         """Create the credits table in the database"""
         with open("sql/create-credit.sql", "r") as file:
