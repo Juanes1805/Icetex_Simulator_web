@@ -199,7 +199,7 @@ git clone https://github.com/tu-usuario/tu-repositorio.git
 ## Estructura del Proyecto
 
 ```python
-icetex_simulator_kivy/
+Icetex_Simulator/
 ├── assets
 │   ├── icetex.ico
 │   └── icetexlogoapk.png
