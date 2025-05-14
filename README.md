@@ -139,6 +139,20 @@ Para ejecutar las pruebas unitarias, utilice el siguiente comando desde la raíz
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
+## Base de Datos
+
+Asegurese de tener una base de datos PostgreSQL y sus respectivos datos de acceso.
+
+Establezca en el archivo `SecretConfig-sample.py` los datos de conexion a su base de datos y guardelo como `SecretConfig.py`.
+
+Para crear la tabla de créditos ejecute el siguiente comando:
+
+```sh
+psql -U username -d database_name -f ./sql/create-credit.sql
+```
+
+Reemplaze `username` por su nombre de usuario PostgreSQL y `database_name` por el nombre de su base de datos donde se ejecutará el script.
+
 ## Ejecutable del proyecto
 
 ### Pasos para ejecutar SimuladorIcetex.exe
