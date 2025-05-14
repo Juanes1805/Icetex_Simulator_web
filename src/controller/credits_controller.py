@@ -104,3 +104,14 @@ class CreditsController:
         )
 
         cursor.connection.commit()
+
+    def delete_credit(self, credit_id: str):
+        """Delete a credit from the database by its ID"""
+        cursor = self.get_cursor()
+        cursor.execute(
+            f"""
+            DELETE FROM credits WHERE credit_id = '{credit_id}'
+            """
+        )
+
+        cursor.connection.commit()
