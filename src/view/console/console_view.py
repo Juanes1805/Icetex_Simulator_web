@@ -49,11 +49,11 @@ def main():
         fee_while_studying = payment_fee_calc_while_studying(
             credit_type, college_enrollment, semesters
         )
-        print(f"Your monthly fee while studying is: {fee_while_studying}")
+        print(f"Your monthly fee while studying is: {round(fee_while_studying, 2)}")
         fee_after_studying = payment_fee_calc_after_studying(
             credit_type, college_enrollment, semesters
         )
-        print(f"Your monthly fee after studying is: {fee_after_studying}")
+        print(f"Your monthly fee after studying is: {round(fee_after_studying, 2)}")
 
         if input("Do you want to calculate another fee? (yes/no): ").lower() != "yes":
             print("Thanks for using the ICETEX simulator. Goodbye!")
