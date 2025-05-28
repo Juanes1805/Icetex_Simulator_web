@@ -57,3 +57,9 @@ def crear_tablas():
     controller.create_table()
     flash('Tablas creadas correctamente')
     return redirect(url_for('web.index'))
+
+@web_bp.route('/eliminar_tablas', methods=['GET', 'POST'])
+def eliminar_tablas():
+    controller.delete_table()
+    flash('Tabla eliminada correctamente')
+    return redirect(url_for('web.index'))
