@@ -9,6 +9,9 @@
 - Emanuel García
 - Luis Carlos Guerra
 
+## Autor de la Página web:
+- Juan Esteban Marín
+
 ## Descripción
 
 Este programa permite a los estudiantes conocer con claridad su compromiso financiero y planificar sus pagos de manera adecuada. La simulación calcula la cantidad que el estudiante debe pagar mientras estudia y el monto que debe cancelar después de finalizar su periodo de estudios. La información para la realización de este programa fue extraida directamente de la página del [ICETEX](https://web.icetex.gov.co/es/creditos/tu-eliges).
@@ -145,11 +148,11 @@ Para ejecutar la pagina web:
 
 1. Asegurese que tiene una base de datos a creda en blanco
 2. Digite las credenciales de la base de datos en el archivo SecretConfig.py
-3. Y después utilice el siguiente comando desde la raíz del proyecto:
+3. Utilice el siguiente comando desde la raíz del proyecto:
 ```sh
 python src/view/web/app.py
 ```
-4. Por último, oprie ctrl + click en el servidor que le aparece en la consola
+4. Por último, oprima ctrl + click en el servidor que le aparece en la consola
 
 ## Base de Datos
 
