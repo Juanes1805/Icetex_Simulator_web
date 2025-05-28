@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Icetex Simulator Web</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>Icetex Simulator Web</h1>
+        <nav>
+            <a href="{{ url_for('web.index') }}">Inicio</a>
+            <a href="{{ url_for('web.buscar') }}">Buscar Crédito</a>
+            <a href="{{ url_for('web.insertar') }}">Insertar Crédito</a>
+            <a href="{{ url_for('web.modificar') }}">Modificar Crédito</a>
+            <a href="{{ url_for('web.crear_tablas') }}">Crear Tablas BD</a>
+        </nav>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

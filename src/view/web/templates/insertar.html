@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Insertar Crédito</h2>
+    <form method="post">
+        <label for="credit_id">ID del Crédito:</label>
+        <input type="text" name="credit_id" id="credit_id" required>
+        <label for="college_enrollment">Matrícula:</label>
+        <input type="text" name="college_enrollment" id="college_enrollment" required>
+        <label for="semesters">Semestres:</label>
+        <input type="number" name="semesters" id="semesters" required>
+        <label for="credit_type">Tipo de Crédito:</label>
+        <input type="text" name="credit_type" id="credit_type" required>
+        <label for="payment_fee_while_studying">Cuota mientras estudia:</label>
+        <input type="number" step="0.01" name="payment_fee_while_studying" id="payment_fee_while_studying" required>
+        <label for="payment_fee_after_studying">Cuota después de estudiar:</label>
+        <input type="number" step="0.01" name="payment_fee_after_studying" id="payment_fee_after_studying">
+        <button type="submit">Insertar</button>
+    </form>
+{% endblock %}

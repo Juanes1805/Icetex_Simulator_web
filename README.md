@@ -139,6 +139,18 @@ Para ejecutar las pruebas unitarias, utilice el siguiente comando desde la raíz
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
+## Ejecución de página web
+
+Para ejecutar la pagina web:
+
+1. Asegurese que tiene una base de datos a creda en blanco
+2. Digite las credenciales de la base de datos en el archivo SecretConfig.py
+3. Y después utilice el siguiente comando desde la raíz del proyecto:
+```sh
+python src/view/web/app.py
+```
+4. Por último, oprie ctrl + click en el servidor que le aparece en la consola
+
 ## Base de Datos
 
 Asegurese de tener una base de datos PostgreSQL y sus respectivos datos de acceso.
@@ -223,7 +235,14 @@ Icetex_Simulator/
 │       ├── gui
 │       │   └── console_kivy.py
 │       └── web
-│           └── app.py
+│           ├── templates
+│           │    ├── base.html
+│           │    ├── buscar.html
+│           │    ├── index.html
+│           │    ├── insertar.html
+│           │    └── modificar.html
+│           ├── app.py
+│           └── routes.py
 ├── tests
 │   ├── test_logic.py
 |   └── test_credit.py
@@ -232,6 +251,7 @@ Icetex_Simulator/
 ├── main.py
 ├── README.md
 ├── requirements.txt
-├── SimuladorIcetex.spec
-└── SecretConfig-sample.py
+├── SecretConfig-sample.py
+├── SecretConfig.py
+└── SimuladorIcetex.spec
 ```

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Buscar Crédito</h2>
+    <form method="post">
+        <label for="credit_id">ID del Crédito:</label>
+        <input type="text" name="credit_id" id="credit_id" required>
+        <button type="submit">Buscar</button>
+    </form>
+    {% if resultado %}
+        <h3>Resultado:</h3>
+        <ul>
+            <li><b>ID:</b> {{ resultado.credit_id }}</li>
+            <li><b>Matrícula:</b> {{ resultado.college_enrollment }}</li>
+            <li><b>Semestres:</b> {{ resultado.semesters }}</li>
+            <li><b>Tipo:</b> {{ resultado.credit_type }}</li>
+            <li><b>Cuota mientras estudia:</b> {{ resultado.payment_fee_while_studying }}</li>
+            <li><b>Cuota después de estudiar:</b> {{ resultado.payment_fee_after_studying }}</li>
+        </ul>
+    {% elif resultado is not none %}
+        <p>No se encontró ningún crédito con ese ID.</p>
+    {% endif %}
+{% endblock %}
